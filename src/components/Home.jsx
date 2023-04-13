@@ -1,8 +1,11 @@
 import React from 'react'
+import Navbar from './Navbar'
 
 const Home = () => {
   return (
-    <div className="text-3xl font-bold underline">home<button>Hai</button></div>
+    <div>
+      <Navbar />
+    </div>
   )
 }
 
