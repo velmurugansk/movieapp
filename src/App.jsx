@@ -1,4 +1,5 @@
 import './index.css'
+import './assets/font/Montserrat/Montserrat-Regular.ttf';
 import Home from './components/Home'
 
 function App() {
