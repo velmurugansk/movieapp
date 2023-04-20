@@ -1,17 +1,16 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import { APIKey } from '../apis/Movieapikey';
 
 const Listmovies = () => {
   const [movielist, setMovielist] = useState([]);
   const [error, setError] = useState(null);
 
-  const fetchmovieData = () => {
-    axios("http://www.omdbapi.com/?i=tt3896198&apikey=ecba262b")
-      .then(response => {
-        setMovielist(response.data);
-        setError(null);
-      }).catch(setError);
+  const fetchmovieData = async () => {    
+    const data = await axios("https://www.omdbapi.com/?apikey=ecba262b&s='movie'");             
+      const response=data.data.Search      
+      setMovielist(response);             
   }
 
   useEffect(() => {
@@ -23,9 +22,11 @@ const Listmovies = () => {
   return (
     <div className='bg-gray-700 text-white h-screen px-20 py-10'>
       <ul>
-        <li key={movielist.title}>
-            <img src={movielist.Poster} alt="movieposter" />
-        </li>
+        {movielist.map((movie) => (          
+          <li key={movie.imdbID}>
+          <img src={movie.Poster} alt="movieposter" />
+          </li>
+        ))}        
       </ul>
     </div>
   )
