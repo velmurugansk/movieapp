@@ -20,14 +20,15 @@ const Listmovies = () => {
   if (error) return <p>An error occurred</p>
   
   return (
-    <div className='bg-gray-700 text-white h-screen px-20 py-10'>
-      <ul>
+    <div className='bg-gray-700 text-white  px-20 py-10'>
+      <div className='flex flex-row flex-wrap'>
         {movielist.map((movie) => (          
-          <li key={movie.imdbID}>
-          <img src={movie.Poster} alt="movieposter" />
-          </li>
+          <div className='w-1/4' key={movie.imdbID}>
+          <img src={movie.Poster} className='h-60 w-60' alt="movieposter" />
+          <p>{movie.Title}</p>
+          </div>
         ))}        
-      </ul>
+      </div>
     </div>
   )
 }
