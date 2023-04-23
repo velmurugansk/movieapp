@@ -23,9 +23,10 @@ const Listmovies = () => {
     <div className='bg-gray-700 text-white  px-20 py-10'>
       <div className='flex flex-row flex-wrap'>
         {movielist.map((movie) => (          
-          <div className='w-1/4' key={movie.imdbID}>
+          <div className='w-1/4 mt-2.5' key={movie.imdbID}>
           <img src={movie.Poster} className='h-60 w-60' alt="movieposter" />
           <p>{movie.Title}</p>
+          <p>{movie.Year}</p>
           </div>
         ))}        
       </div>
