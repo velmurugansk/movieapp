@@ -2,7 +2,8 @@ import React from 'react';
 import logo from "../assets/logo.svg";
 import {FiSearch} from 'react-icons/fi'
 
-const Navbar = () => {
+const Navbar = (props) => {
+    
     return (
         <div>
             <nav className="flex items-center justify-between flex-wrap bg-neutral-500 p-3">
@@ -22,10 +23,12 @@ const Navbar = () => {
                     <div className='flex items-center'>
                         <div className="relative mr-2">
                             <FiSearch className='absolute text-white top-2 left-1' />
-                            <input type='text' 
-                            className='pl-6 h-8 border-transparent transition-all duration-700 ease-in-out bg-transparent outline-none pr-2 py-2 text-white rounded-md focus:border-white border-2'
-                            placeholder="Search"
-                            id="searchMovie" />
+                            <input type='text'
+                                className='pl-6 h-8 border-transparent transition-all duration-700 ease-in-out bg-transparent outline-none pr-2 py-2 text-white rounded-md focus:border-white border-2'
+                                placeholder="Search"
+                                id="searchMovie"
+                                onChange={(event) => props.setSearchmovie(event.target.value)}
+                            />
                         </div>                        
                         <a href="#" className="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0">Register</a>
                         <a href="#" className="inline-block text-sm ml-2 px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0">Login</a>

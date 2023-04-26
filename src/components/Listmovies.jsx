@@ -3,19 +3,21 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { APIKey } from '../apis/Movieapikey';
 
-const Listmovies = () => {
+const Listmovies = (props) => {    
+  let moviename = props.searchmovie;
   const [movielist, setMovielist] = useState([]);
   const [error, setError] = useState(null);
-
+  
   const fetchmovieData = async () => {    
-    const data = await axios("https://www.omdbapi.com/?apikey=ecba262b&s='movie'");             
+    const data = await axios(`https://www.omdbapi.com/?apikey=${APIKey}&s='${moviename}'`);             
       const response=data.data.Search      
       setMovielist(response);             
   }
 
   useEffect(() => {
     fetchmovieData()
-  }, [])
+  }, [moviename])
+
 
   if (error) return <p>An error occurred</p>
   

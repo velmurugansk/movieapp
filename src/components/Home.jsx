@@ -1,12 +1,14 @@
 import React from 'react';
 import Navbar from './Navbar';
 import Listmovies from './Listmovies';
+import { useState } from 'react';
 
 const Home = () => {
+  const [searchmovie, setSearchmovie] = useState('harry');
   return (
     <div>
-      <Navbar />
-      <Listmovies />
+      <Navbar searchmovie={searchmovie} setSearchmovie={setSearchmovie} />
+      <Listmovies searchmovie={searchmovie} />
     </div>
   )
 }
