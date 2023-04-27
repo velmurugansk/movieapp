@@ -1,12 +1,13 @@
 import React from 'react';
 import logo from "../assets/logo.svg";
-import {FiSearch} from 'react-icons/fi'
+import {FiSearch} from 'react-icons/fi';
+import '../components/Navbar.css';
 
 const Navbar = (props) => {
     
     return (
         <div>
-            <nav className="flex items-center justify-between flex-wrap bg-neutral-500 p-3">
+            <nav className="flex items-center justify-between flex-wrap nav-bg p-3">
                 <div className="flex items-center flex-shrink-0 text-white mr-6">
                     <img src={logo} alt="logo" className='h-8 w-8' />
                     <span className='ml-2'>V Movie</span>
