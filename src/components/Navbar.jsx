@@ -6,7 +6,7 @@ const Navbar = (props) => {
     
     return (
         <div>
-            <nav className="flex items-center justify-between flex-wrap bg-neutral-500 p-3">
+            <nav className="flex items-center justify-between flex-wrap bg-[#18122B] p-3">
                 <div className="flex items-center flex-shrink-0 text-white mr-6">
                     <img src={logo} alt="logo" className='h-8 w-8' />
                     <span className='ml-2'>V Movie</span>
