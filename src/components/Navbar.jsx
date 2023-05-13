@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from "../assets/logo.svg";
-import {FiSearch} from 'react-icons/fi'
+import {FiSearch} from 'react-icons/fi';
+import '../components/Navbar.css';
 
 const Navbar = (props) => {
     
